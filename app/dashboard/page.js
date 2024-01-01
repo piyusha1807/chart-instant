@@ -1,22 +1,54 @@
+"use client";
 import React from "react";
-import dynamic from "next/dynamic";
-import Link from "next/link";
-
-const CustomTabs = dynamic(() => import("@/components/Tabs"), { ssr: false });
+import { useRouter } from "next/navigation";
+import FileUploader from "@/components/FileUploader";
+import CopyPaste from "@/components/CopyPaste";
+import CustomTabs from "@/components/Tabs";
+import { Button } from "@/components/Button";
+import { useDispatch } from "react-redux";
+import { saveStep } from "@/redux/dashboard/uploadSlice";
 
 const Dashboard = () => {
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const handleSave = ({ data }) => {
+    dispatch(
+      saveStep({
+        data: data,
+      })
+    );
+  };
+
+  const handleNext = () => {
+    router.push("/dashboard/prepareData");
+  };
+
+  const tabList = [
+    {
+      value: "upload",
+      title: "Upload",
+      children: <FileUploader onSave={handleSave} />,
+    },
+    {
+      value: "copyPaste",
+      title: "Copy & Paste",
+      children: <CopyPaste onSave={handleSave} />,
+    },
+    {
+      value: "googleSheet",
+      title: "Google Sheet",
+      children: <p>Google Sheet</p>,
+    },
+    { value: "byURl", title: "By URL", children: <p>By URL</p> },
+    { value: "example", title: "Example", children: <p>Example</p> },
+  ];
+
   return (
     <div>
-      <CustomTabs />
-      <div class="mt-6 flex items-center justify-end gap-x-6">
-        <Link href="/dashboard/prepareData">
-          <button
-            type="submit"
-            class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Next
-          </button>
-        </Link>
+      <CustomTabs tabList={tabList} defaultActiveValue="upload" />
+      <div className="mt-6 flex items-center justify-end gap-x-3">
+        <Button onClick={handleNext}>Next</Button>
       </div>
     </div>
   );
