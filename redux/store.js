@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import uploadSlice from "./dashboard/uploadSlice";
+import dashboardSlice from "./dashboardSlice";
 
 export const store = configureStore({
-    reducer: {
-        uploadReducer: uploadSlice
-    }
-})
+  reducer: {
+    dashboardReducer: dashboardSlice,
+  },
+});

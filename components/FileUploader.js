@@ -128,14 +128,14 @@ const FileUploader = ({ onSave }) => {
           </p>
         </div>
       </div>
-      {fileData && (
+      {/* {fileData && (
         <div className="mt-6">
           <h3 className="text-lg font-semibold">Uploaded File Data</h3>
           <pre className="mt-2 overflow-x-auto text-sm text-gray-700">
             {JSON.stringify(fileData, null, 2)}
           </pre>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

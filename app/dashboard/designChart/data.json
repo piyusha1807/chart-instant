@@ -1,0 +1,65 @@
+[
+  {
+    "country": "AD",
+    "hot dog": 53,
+    "burger": 150,
+    "sandwich": 17,
+    "kebab": 89,
+    "fries": 180,
+    "donut": 115
+  },
+  {
+    "country": "AE",
+    "hot dog": 52,
+    "burger": 143,
+    "sandwich": 126,
+    "kebab": 91,
+    "fries": 118,
+    "donut": 54
+  },
+  {
+    "country": "AF",
+    "hot dog": 3,
+    "burger": 85,
+    "sandwich": 6,
+    "kebab": 30,
+    "fries": 192,
+    "donut": 200
+  },
+  {
+    "country": "AG",
+    "hot dog": 31,
+    "burger": 159,
+    "sandwich": 123,
+    "kebab": 0,
+    "fries": 65,
+    "donut": 40
+  },
+  {
+    "country": "AI",
+    "hot dog": 57,
+    "burger": 122,
+    "sandwich": 160,
+    "kebab": 132,
+    "fries": 155,
+    "donut": 98
+  },
+  {
+    "country": "AL",
+    "hot dog": 200,
+    "burger": 14,
+    "sandwich": 144,
+    "kebab": 84,
+    "fries": 162,
+    "donut": 94
+  },
+  {
+    "country": "AM",
+    "hot dog": 22,
+    "burger": 176,
+    "sandwich": 28,
+    "kebab": 54,
+    "fries": 4,
+    "donut": 190
+  }
+]

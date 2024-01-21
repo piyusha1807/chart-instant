@@ -6,18 +6,14 @@ import CopyPaste from "@/components/CopyPaste";
 import CustomTabs from "@/components/Tabs";
 import { Button } from "@/components/Button";
 import { useDispatch } from "react-redux";
-import { saveStep } from "@/redux/dashboard/uploadSlice";
+import { saveMasterData } from "@/redux/dashboardSlice";
 
 const Dashboard = () => {
   const router = useRouter();
   const dispatch = useDispatch();
 
   const handleSave = ({ data }) => {
-    dispatch(
-      saveStep({
-        data: data,
-      })
-    );
+    dispatch(saveMasterData(data));
   };
 
   const handleNext = () => {
